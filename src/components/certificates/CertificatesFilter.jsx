@@ -1,15 +1,10 @@
-const selectOptions = [
-    "Web application",
-    "Application mobile",
-    "UI/UX Design",
-    "Robotique",
-];
+const selectOptions = ["Frontend", "Backend", "Design"];
 
-const ProjectsFilter = ({ setSelectProject }) => {
+const CertificatesFilter = ({ setSelectCategory }) => {
     return (
         <select
             onChange={(e) => {
-                setSelectProject(e.target.value);
+                setSelectCategory(e.target.value);
             }}
             className="font-general-medium 
                 px-4
@@ -27,8 +22,8 @@ const ProjectsFilter = ({ setSelectProject }) => {
                 dark:text-ternary-light
             "
         >
-            <option value={setSelectProject} className="text-sm sm:text-md">
-                Tous mes projets
+            <option value="" className="text-sm sm:text-md">
+                Toutes les certifications
             </option>
 
             {selectOptions.map((option) => (
@@ -40,4 +35,4 @@ const ProjectsFilter = ({ setSelectProject }) => {
     );
 };
 
-export default ProjectsFilter;
+export default CertificatesFilter;

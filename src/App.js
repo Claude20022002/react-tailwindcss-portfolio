@@ -36,7 +36,7 @@ function App() {
                                 element={<Certificates />}
                             />
                             <Route
-                                path="certficates/single-certificate"
+                                path="certificates/:id"
                                 element={<CertificateSingle />}
                             />
                             <Route path="contact" element={<Contact />} />

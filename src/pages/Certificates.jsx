@@ -1,14 +1,14 @@
-import ProjectsGrid from "../components/projects/ProjectsGrid";
-import { ProjectsProvider } from "../context/ProjectsContext";
+import CertificatesGrid from "../components/certificates/CertificatesGrid";
+import { CertificatesProvider } from "../context/CertificatesContext";
 
-const Projects = () => {
+const Certificates = () => {
     return (
-        <ProjectsProvider>
+        <CertificatesProvider>
             <div className="container mx-auto">
-                <ProjectsGrid />
+                <CertificatesGrid />
             </div>
-        </ProjectsProvider>
+        </CertificatesProvider>
     );
 };
 
-export default Projects;
+export default Certificates;

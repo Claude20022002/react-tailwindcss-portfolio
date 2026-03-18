@@ -1,45 +1,45 @@
 import { useState, createContext } from "react";
-import { projectsData } from "../data/projects";
+import { certificatesData } from "../data/certificates";
 
-// Create projects context
+// Create certificates context
 export const CertificatesContext = createContext();
 
-// Create the projects context provider
+// Create the certificates context provider
 export const CertificatesProvider = (props) => {
-    const [projects, setProjects] = useState(projectsData);
-    const [searchProject, setSearchProject] = useState("");
-    const [selectProject, setSelectProject] = useState("");
+    const [certificates, setCertificates] = useState(certificatesData);
+    const [searchCertificate, setSearchCertificate] = useState("");
+    const [selectCategory, setSelectCategory] = useState("");
 
-    // Search projects by project title
-    const searchProjectsByTitle = projects.filter((item) => {
+    // Search certificates by title
+    const searchCertificatesByTitle = certificates.filter((item) => {
         const result = item.title
             .toLowerCase()
-            .includes(searchProject.toLowerCase())
+            .includes(searchCertificate.toLowerCase())
             ? item
-            : searchProject === ""
+            : searchCertificate === ""
               ? item
               : "";
         return result;
     });
 
-    // Select projects by project category
-    const selectProjectsByCategory = projects.filter((item) => {
+    // Select certificates by category
+    const selectCertificatesByCategory = certificates.filter((item) => {
         let category =
             item.category.charAt(0).toUpperCase() + item.category.slice(1);
-        return category.includes(selectProject);
+        return category.includes(selectCategory);
     });
 
     return (
         <CertificatesContext.Provider
             value={{
-                projects,
-                setProjects,
-                searchProject,
-                setSearchProject,
-                searchProjectsByTitle,
-                selectProject,
-                setSelectProject,
-                selectProjectsByCategory,
+                certificates,
+                setCertificates,
+                searchCertificate,
+                setSearchCertificate,
+                searchCertificatesByTitle,
+                selectCategory,
+                setSelectCategory,
+                selectCertificatesByCategory,
             }}
         >
             {props.children}

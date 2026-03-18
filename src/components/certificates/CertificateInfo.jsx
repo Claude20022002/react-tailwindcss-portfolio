@@ -1,81 +1,94 @@
 import { useContext } from "react";
-import SingleProjectContext from "../../context/SingleProjectContext";
+import SingleCertificateContext from "../../context/SingleCertificateContext";
 
-const ProjectInfo = () => {
-    const { singleProjectData } = useContext(SingleProjectContext);
+const CertificateInfo = () => {
+    const { singleCertificateData, loading } = useContext(
+        SingleCertificateContext,
+    );
+
+    if (loading || !singleCertificateData) {
+        return (
+            <div className="mt-14 text-center text-ternary-dark dark:text-ternary-light">
+                Chargement...
+            </div>
+        );
+    }
 
     return (
         <div className="block sm:flex gap-0 sm:gap-10 mt-14">
             <div className="w-full sm:w-1/3 text-left">
-                {/* Single project client details */}
+                {/* Single certificate issuer details */}
                 <div className="mb-7">
                     <p className="font-general-regular text-2xl font-semibold text-secondary-dark dark:text-secondary-light mb-2">
-                        {singleProjectData.ProjectInfo.ClientHeading}
+                        {singleCertificateData.Info.IssuedHeading}
                     </p>
                     <ul className="leading-loose">
-                        {singleProjectData.ProjectInfo.CompanyInfo.map(
-                            (info) => {
-                                return (
-                                    <li
-                                        className="font-general-regular text-ternary-dark dark:text-ternary-light"
-                                        key={info.id}
+                        {singleCertificateData.Info.IssuerInfo.map((info) => {
+                            return (
+                                <li
+                                    className="font-general-regular text-ternary-dark dark:text-ternary-light"
+                                    key={info.id}
+                                >
+                                    <span>{info.title}: </span>
+                                    <a
+                                        href={
+                                            info.title ===
+                                            "Voir la certification"
+                                                ? info.details
+                                                : "#"
+                                        }
+                                        className={
+                                            info.title ===
+                                            "Voir la certification"
+                                                ? "hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300"
+                                                : ""
+                                        }
+                                        aria-label="Certificate Details"
                                     >
-                                        <span>{info.title}: </span>
-                                        <a
-                                            href="https://www.linkedin.com/in/claudia-lusamote-kimfuta-271b512a8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-                                            className={
-                                                info.title === "Website" ||
-                                                info.title === "Phone"
-                                                    ? "hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300"
-                                                    : ""
-                                            }
-                                            aria-label="Project Website and Phone"
-                                        >
-                                            {info.details}
-                                        </a>
-                                    </li>
-                                );
-                            },
-                        )}
+                                        {info.details}
+                                    </a>
+                                </li>
+                            );
+                        })}
                     </ul>
                 </div>
 
-                {/* Single project objectives */}
+                {/* Certificate skills */}
                 <div className="mb-7">
                     <p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
-                        {singleProjectData.ProjectInfo.ObjectivesHeading}
+                        {singleCertificateData.Info.SkillsHeading}
                     </p>
                     <p className="font-general-regular text-primary-dark dark:text-ternary-light">
-                        {singleProjectData.ProjectInfo.ObjectivesDetails}
+                        {singleCertificateData.Info.SkillsDetails}
                     </p>
                 </div>
 
-                {/* Single project technologies */}
+                {/* Certificate technologies */}
                 <div className="mb-7">
                     <p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
-                        {singleProjectData.ProjectInfo.Technologies[0].title}
+                        {singleCertificateData.Info.Technologies[0].title}
                     </p>
                     <p className="font-general-regular text-primary-dark dark:text-ternary-light">
-                        {singleProjectData.ProjectInfo.Technologies[0].techs.join(
+                        {singleCertificateData.Info.Technologies[0].techs.join(
                             ", ",
                         )}
                     </p>
                 </div>
 
-                {/* Single project social sharing */}
+                {/* Social sharing */}
                 <div>
                     <p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
-                        {singleProjectData.ProjectInfo.SocialSharingHeading}
+                        {singleCertificateData.Info.SocialSharingHeading}
                     </p>
                     <div className="flex items-center gap-3 mt-5">
-                        {singleProjectData.ProjectInfo.SocialSharing.map(
+                        {singleCertificateData.Info.SocialSharing.map(
                             (social) => {
                                 return (
                                     <a
                                         key={social.id}
                                         href={social.url}
                                         target="__blank"
-                                        aria-label="Share Project"
+                                        aria-label="Share Certificate"
                                         className="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
                                     >
                                         <span className="text-lg lg:text-2xl">
@@ -89,24 +102,26 @@ const ProjectInfo = () => {
                 </div>
             </div>
 
-            {/*  Single project right section */}
+            {/* Certificate details section */}
             <div className="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
                 <p className="font-general-regular text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
-                    {singleProjectData.ProjectInfo.ProjectDetailsHeading}
+                    {singleCertificateData.Info.CertificateDetailsHeading}
                 </p>
-                {singleProjectData.ProjectInfo.ProjectDetails.map((details) => {
-                    return (
-                        <p
-                            key={details.id}
-                            className="font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light"
-                        >
-                            {details.details}
-                        </p>
-                    );
-                })}
+                {singleCertificateData.Info.CertificateDetails.map(
+                    (details) => {
+                        return (
+                            <p
+                                key={details.id}
+                                className="font-general-regular mb-5 text-ternary-dark dark:text-ternary-light"
+                            >
+                                {details.details}
+                            </p>
+                        );
+                    },
+                )}
             </div>
         </div>
     );
 };
 
-export default ProjectInfo;
+export default CertificateInfo;

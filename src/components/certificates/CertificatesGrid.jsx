@@ -1,25 +1,25 @@
 import { useContext } from "react";
 import { FiSearch } from "react-icons/fi";
-import ProjectSingle from "./CertificateSingle";
-import { ProjectsContext } from "../../context/ProjectsContext";
-import ProjectsFilter from "./CertificatesFilter";
+import CertificateSingle from "./CertificateSingle";
+import { CertificatesContext } from "../../context/CertificatesContext";
+import CertificatesFilter from "./CertificatesFilter";
 
-const ProjectsGrid = () => {
+const CertificatesGrid = () => {
     const {
-        projects,
-        searchProject,
-        setSearchProject,
-        searchProjectsByTitle,
-        selectProject,
-        setSelectProject,
-        selectProjectsByCategory,
-    } = useContext(ProjectsContext);
+        certificates,
+        searchCertificate,
+        setSearchCertificate,
+        searchCertificatesByTitle,
+        selectCategory,
+        setSelectCategory,
+        selectCertificatesByCategory,
+    } = useContext(CertificatesContext);
 
     return (
         <section className="py-5 sm:py-10 mt-5 sm:mt-10">
             <div className="text-center">
                 <p className="font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light">
-                    Projets portfolio
+                    Mes certifications
                 </p>
             </div>
 
@@ -33,7 +33,7 @@ const ProjectsGrid = () => {
                         mb-3
                         "
                 >
-                    Chercher les projets par titre ou catégorie
+                    Chercher les certifications par titre ou catégorie
                 </h3>
                 <div
                     className="
@@ -62,7 +62,7 @@ const ProjectsGrid = () => {
                         </span>
                         <input
                             onChange={(e) => {
-                                setSearchProject(e.target.value);
+                                setSearchCertificate(e.target.value);
                             }}
                             className="font-general-medium 
                                 pl-3
@@ -84,40 +84,43 @@ const ProjectsGrid = () => {
                             name="name"
                             type="search"
                             required=""
-                            placeholder="Recherche projets"
+                            placeholder="Recherche certifications"
                             aria-label="Name"
                         />
                     </div>
 
-                    <ProjectsFilter setSelectProject={setSelectProject} />
+                    <CertificatesFilter setSelectCategory={setSelectCategory} />
                 </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
-                {selectProject
-                    ? selectProjectsByCategory.map((project) => (
-                          <ProjectSingle
-                              title={project.title}
-                              category={project.category}
-                              image={project.img}
-                              key={project.id}
+                {selectCategory
+                    ? selectCertificatesByCategory.map((certificate) => (
+                          <CertificateSingle
+                              id={certificate.id}
+                              title={certificate.title}
+                              category={certificate.category}
+                              image={certificate.img}
+                              key={certificate.id}
                           />
                       ))
-                    : searchProject
-                      ? searchProjectsByTitle.map((project) => (
-                            <ProjectSingle
-                                title={project.title}
-                                category={project.category}
-                                image={project.img}
-                                key={project.id}
+                    : searchCertificate
+                      ? searchCertificatesByTitle.map((certificate) => (
+                            <CertificateSingle
+                                id={certificate.id}
+                                title={certificate.title}
+                                category={certificate.category}
+                                image={certificate.img}
+                                key={certificate.id}
                             />
                         ))
-                      : projects.map((project) => (
-                            <ProjectSingle
-                                title={project.title}
-                                category={project.category}
-                                image={project.img}
-                                key={project.id}
+                      : certificates.map((certificate) => (
+                            <CertificateSingle
+                                id={certificate.id}
+                                title={certificate.title}
+                                category={certificate.category}
+                                image={certificate.img}
+                                key={certificate.id}
                             />
                         ))}
             </div>
@@ -125,4 +128,4 @@ const ProjectsGrid = () => {
     );
 };
 
-export default ProjectsGrid;
+export default CertificatesGrid;
