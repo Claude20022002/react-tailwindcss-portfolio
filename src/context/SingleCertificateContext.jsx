@@ -1,20 +1,20 @@
-import { useState, createContext } from 'react';
-import { singleProjectData as singleProjectDataJson } from '../data/singleProjectData';
+import { useState, createContext } from "react";
+import { singleProjectData as singleProjectDataJson } from "../data/singleProjectData";
 
-const SingleProjectContext = createContext();
+const SingleCertificateContext = createContext();
 
 export const SingleProjectProvider = ({ children }) => {
-	const [singleProjectData, setSingleProjectData] = useState(
-		singleProjectDataJson
-	);
+    const [singleProjectData, setSingleProjectData] = useState(
+        singleProjectDataJson,
+    );
 
-	return (
-		<SingleProjectContext.Provider
-			value={{ singleProjectData, setSingleProjectData }}
-		>
-			{children}
-		</SingleProjectContext.Provider>
-	);
+    return (
+        <SingleCertificateContext.Provider
+            value={{ singleProjectData, setSingleProjectData }}
+        >
+            {children}
+        </SingleCertificateContext.Provider>
+    );
 };
 
-export default SingleProjectContext;
+export default SingleCertificateContext;

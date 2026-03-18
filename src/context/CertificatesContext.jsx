@@ -2,10 +2,10 @@ import { useState, createContext } from "react";
 import { projectsData } from "../data/projects";
 
 // Create projects context
-export const ProjectsContext = createContext();
+export const CertificatesContext = createContext();
 
 // Create the projects context provider
-export const ProjectsProvider = (props) => {
+export const CertificatesProvider = (props) => {
     const [projects, setProjects] = useState(projectsData);
     const [searchProject, setSearchProject] = useState("");
     const [selectProject, setSelectProject] = useState("");
@@ -30,7 +30,7 @@ export const ProjectsProvider = (props) => {
     });
 
     return (
-        <ProjectsContext.Provider
+        <CertificatesContext.Provider
             value={{
                 projects,
                 setProjects,
@@ -43,6 +43,6 @@ export const ProjectsProvider = (props) => {
             }}
         >
             {props.children}
-        </ProjectsContext.Provider>
+        </CertificatesContext.Provider>
     );
 };
