@@ -38,12 +38,12 @@ export const certificatesData = [
                 {
                     id: 3,
                     title: "Numéro de certificat",
-                    details: "À COMPLÉTER",
+                    details: "SOAFZCPD8P1O",
                 },
                 {
                     id: 4,
                     title: "Voir la certification",
-                    details: "https://coursera.org/verify",
+                    details: "https://coursera.org/verify/SOAFZCPD8P1O",
                 },
             ],
             skillsHeading: "Compétences obtenues",
@@ -133,12 +133,12 @@ export const certificatesData = [
                 {
                     id: 3,
                     title: "Numéro de certificat",
-                    details: "À COMPLÉTER",
+                    details: "II31E6A2MD6S",
                 },
                 {
                     id: 4,
                     title: "Voir la certification",
-                    details: "https://coursera.org/verify",
+                    details: "https://coursera.org/verify/II31E6A2MD6S",
                 },
             ],
             skillsHeading: "Compétences obtenues",
@@ -189,6 +189,12 @@ export const certificatesData = [
                     icon: <FiFacebook />,
                     url: "https://facebook.com",
                 },
+                {
+                    id: 4,
+                    name: "Instagram",
+                    icon: <FiInstagram />,
+                    url: "https://instagram.com",
+                },
             ],
         },
         relatedCertificates: {
@@ -235,12 +241,12 @@ export const certificatesData = [
                 {
                     id: 3,
                     title: "Numéro de certificat",
-                    details: "À COMPLÉTER",
+                    details: "NUNGT5BNGOOR",
                 },
                 {
                     id: 4,
                     title: "Voir la certification",
-                    details: "https://coursera.org/verify",
+                    details: "https://coursera.org/verify/NUNGT5BNGOOR",
                 },
             ],
             skillsHeading: "Compétences obtenues",
@@ -333,12 +339,12 @@ export const certificatesData = [
                 {
                     id: 3,
                     title: "Numéro de certificat",
-                    details: "À COMPLÉTER",
+                    details: "UXILGX90HY98",
                 },
                 {
                     id: 4,
                     title: "Voir la certification",
-                    details: "https://coursera.org/verify",
+                    details: "https://coursera.org/verify/UXILGX90HY98",
                 },
             ],
             skillsHeading: "Compétences obtenues",
@@ -432,12 +438,12 @@ export const certificatesData = [
                 {
                     id: 3,
                     title: "Numéro de certificat",
-                    details: "À COMPLÉTER",
+                    details: "GGJ2HCDN3DI9",
                 },
                 {
                     id: 4,
                     title: "Voir la certification",
-                    details: "https://coursera.org/verify",
+                    details: "https://coursera.org/verify/GGJ2HCDN3DI9",
                 },
             ],
             skillsHeading: "Compétences obtenues",
@@ -526,12 +532,12 @@ export const certificatesData = [
                 {
                     id: 3,
                     title: "Numéro de certificat",
-                    details: "À COMPLÉTER",
+                    details: "VBS44JTKDXP8",
                 },
                 {
                     id: 4,
                     title: "Voir la certification",
-                    details: "https://coursera.org/verify",
+                    details: "https://coursera.orgverify/VBS44JTKDXP8",
                 },
             ],
             skillsHeading: "Compétences obtenues",
@@ -624,12 +630,12 @@ export const certificatesData = [
                 {
                     id: 3,
                     title: "Numéro de certificat",
-                    details: "À COMPLÉTER",
+                    details: "6QNW54YBXOJC",
                 },
                 {
                     id: 4,
                     title: "Voir la certification",
-                    details: "https://coursera.org/verify",
+                    details: "https://coursera.org/verify/6QNW54YBXOJC",
                 },
             ],
             skillsHeading: "Compétences obtenues",
@@ -726,12 +732,12 @@ export const certificatesData = [
                 {
                     id: 3,
                     title: "Numéro de certificat",
-                    details: "À COMPLÉTER",
+                    details: "FKORR1KWALTO",
                 },
                 {
                     id: 4,
                     title: "Voir la certification",
-                    details: "https://coursera.org/verify",
+                    details: "https://coursera.org/verify/FKORR1KWALTO",
                 },
             ],
             skillsHeading: "Compétences obtenues",
@@ -825,12 +831,12 @@ export const certificatesData = [
                 {
                     id: 3,
                     title: "Numéro de certificat",
-                    details: "À COMPLÉTER",
+                    details: "NPBXUC3ET3QA",
                 },
                 {
                     id: 4,
                     title: "Voir la certification",
-                    details: "https://coursera.org/verify",
+                    details: "https://coursera.org/verify/NPBXUC3ET3QA",
                 },
             ],
             skillsHeading: "Compétences obtenues",
@@ -927,12 +933,12 @@ export const certificatesData = [
                 {
                     id: 3,
                     title: "Numéro de certificat",
-                    details: "À COMPLÉTER",
+                    details: "UVLT352BQP7Z",
                 },
                 {
                     id: 4,
                     title: "Voir la certification",
-                    details: "https://coursera.org/verify",
+                    details: "https://coursera.org/verify/UVLT352BQP7Z",
                 },
             ],
             skillsHeading: "Compétences obtenues",
@@ -1033,12 +1039,12 @@ export const certificatesData = [
                 {
                     id: 3,
                     title: "Numéro de certificat",
-                    details: "À COMPLÉTER",
+                    details: "Y85DL7T4PRZA",
                 },
                 {
                     id: 4,
                     title: "Voir la certification",
-                    details: "https://coursera.org/verify",
+                    details: "https://coursera.org/verify/Y85DL7T4PRZA",
                 },
             ],
             skillsHeading: "Compétences obtenues",
@@ -1139,12 +1145,12 @@ export const certificatesData = [
                 {
                     id: 3,
                     title: "Numéro de certificat",
-                    details: "À COMPLÉTER",
+                    details: "WA2KHDW9XHWB",
                 },
                 {
                     id: 4,
                     title: "Voir la certification",
-                    details: "https://coursera.org/verify",
+                    details: "https://coursera.org/verify/WA2KHDW9XHWB",
                 },
             ],
             skillsHeading: "Compétences obtenues",
@@ -1241,12 +1247,12 @@ export const certificatesData = [
                 {
                     id: 3,
                     title: "Numéro de certificat",
-                    details: "À COMPLÉTER",
+                    details: "D2SKFE467CGM",
                 },
                 {
                     id: 4,
                     title: "Voir la certification",
-                    details: "https://coursera.org/verify",
+                    details: "https://coursera.org/verify/D2SKFE467CGM",
                 },
             ],
             skillsHeading: "Compétences obtenues",
