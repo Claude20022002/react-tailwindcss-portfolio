@@ -2,7 +2,15 @@ import { useContext } from "react";
 import SingleProjectContext from "../../context/SingleProjectContext";
 
 const ProjectInfo = () => {
-    const { singleProjectData } = useContext(SingleProjectContext);
+    const { singleProjectData, loading } = useContext(SingleProjectContext);
+
+    if (loading || !singleProjectData) {
+        return (
+            <div className="mt-14 text-center text-ternary-dark dark:text-ternary-light">
+                Chargement...
+            </div>
+        );
+    }
 
     return (
         <div className="block sm:flex gap-0 sm:gap-10 mt-14">
