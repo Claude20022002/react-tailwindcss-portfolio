@@ -32,8 +32,8 @@ const Home = () => {
             </div>
 
             <div className="w-full text-left mt-16 sm:mt-20">
-                <p className="font-general-regular text-primary-dark dark:text-primary-light text-2xl sm:text-3xl font-bold mb-12">
-                    📋 Expériences professionnelles
+                <p className="font-general-regular text-center text-primary-dark dark:text-primary-light text-2xl sm:text-3xl font-bold mb-12">
+                    Expériences professionnelles
                 </p>
 
                 <div className="space-y-6">
