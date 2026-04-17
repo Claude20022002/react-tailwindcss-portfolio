@@ -1,633 +1,485 @@
-// Import images
-import WebImage1 from "../images/web-project-1.jpg";
-import WebImage2 from "../images/web-project-2.jpg";
-import MobileImage1 from "../images/mobile-project-1.jpg";
-import MobileImage2 from "../images/mobile-project-2.jpg";
-import UIImage1 from "../images/ui-project-1.jpg";
-import UIImage2 from "../images/ui-project-2.jpg";
-
-// Import icons
 import {
+    FiGithub,
     FiFacebook,
     FiInstagram,
     FiLinkedin,
-    FiTwitter,
-    FiYoutube,
 } from "react-icons/fi";
+
+const socialSharing = [
+    {
+        id: 1,
+        name: "GitHub",
+        icon: <FiGithub />,
+        url: "https://github.com/Claude20022002",
+    },
+    {
+        id: 2,
+        name: "Instagram",
+        icon: <FiInstagram />,
+        url: "https://www.instagram.com/claudia.lusamote?igsh=bTh2ZzE0Ymppazcz",
+    },
+    {
+        id: 3,
+        name: "Facebook",
+        icon: <FiFacebook />,
+        url: "https://www.facebook.com/share/1LAWsnW3oS/?mibextid=wwXIfr",
+    },
+    {
+        id: 4,
+        name: "LinkedIn",
+        icon: <FiLinkedin />,
+        url: "https://www.linkedin.com/in/claudia-lusamote-kimfuta-271b512a8",
+    },
+];
 
 export const projectsData = [
     {
         id: 1,
-        title: "Hestim Planner",
-        category: "Web application",
-        img: WebImage2,
-        publishDate: "Mai 10, 2026",
-        tags: "UI / Frontend / Backend / Base de donnée",
+        title: "Bibliothèque en ligne",
+        category: "Application Web",
+        img: "/projets/bibliothèque/page1.png",
+        publishDate: "Mars 2025",
+        tags: "Full-Stack / React / Node.js / MongoDB",
         header: {
-            title: "Hestim Planner",
-            publishDate: "Mai 10, 2026",
-            tags: "UI / Frontend / Backend / Base de donnée",
+            title: "Bibliothèque en ligne",
+            publishDate: "Mars 2025",
+            tags: "Full-Stack / React / Node.js / MongoDB",
         },
         gallery: [
-            { id: 1, title: "Hestim Planner UI", img: WebImage2 },
-            { id: 2, title: "Hestim Planner Dashboard", img: WebImage1 },
-            { id: 3, title: "Hestim Planner Mobile", img: MobileImage2 },
+            {
+                id: 1,
+                title: "Page d'accueil",
+                img: "/projets/bibliothèque/page1.png",
+            },
+            {
+                id: 2,
+                title: "Catalogue de livres",
+                img: "/projets/bibliothèque/page2.png",
+            },
+            {
+                id: 3,
+                title: "Détail d'un livre",
+                img: "/projets/bibliothèque/page3.png",
+            },
         ],
         info: {
-            clientHeading: "About Client",
+            clientHeading: "À propos du projet",
             companyInfo: [
-                { id: 1, title: "Name", details: "Hestim Corp" },
+                { id: 1, title: "Type", details: "Projet personnel" },
+                { id: 2, title: "Rôle", details: "Développeuse Full-Stack" },
                 {
-                    id: 2,
-                    title: "Services",
-                    details: "UI Design & Frontend Development",
+                    id: 3,
+                    title: "Dépôt GitHub",
+                    details: "https://github.com/Claude20022002/biblioth-que",
                 },
-                { id: 3, title: "Website", details: "https://hestim.com" },
-                { id: 4, title: "Phone", details: "+33 1 23 45 67 89" },
+                { id: 4, title: "Statut", details: "Terminé" },
             ],
-            objectivesHeading: "Objective",
+            objectivesHeading: "Objectif",
             objectivesDetails:
-                "Créer une application web de planification efficace avec une interface intuitive pour gérer les tâches et projets au quotidien.",
+                "Plateforme de gestion de bibliothèque personnelle permettant de rechercher des livres via l'API Google Books, de gérer des collections et de sauvegarder ses favoris.",
             technologies: [
                 {
-                    title: "Tools & Technologies",
+                    title: "Technologies utilisées",
                     techs: [
-                        "React",
-                        "JavaScript",
-                        "TailwindCSS",
+                        "React JS",
                         "Node.js",
                         "MongoDB",
-                        "AdobeXD",
+                        "Express",
+                        "MUI",
+                        "Google Books API",
                     ],
                 },
             ],
-            projectDetailsHeading: "Challenge",
+            projectDetailsHeading: "Défis relevés",
             projectDetails: [
                 {
                     id: 1,
                     details:
-                        "Le défi principal était de créer une interface utilisateur fluide et intuitive pour gérer plusieurs projets en parallèle.",
+                        "Intégration de l'API Google Books avec gestion de la pagination et mise en cache des résultats pour optimiser les performances.",
                 },
                 {
                     id: 2,
                     details:
-                        "Optimiser les performances de l'application pour gérer des milliers de tâches sans ralentissement.",
+                        "Conception d'un système d'authentification et de gestion des collections personnalisées par utilisateur avec MongoDB.",
                 },
             ],
-            socialSharingHeading: "Share This",
-            socialSharing: [
-                {
-                    id: 1,
-                    name: "Twitter",
-                    icon: <FiTwitter />,
-                    url: "https://twitter.com",
-                },
-                {
-                    id: 2,
-                    name: "Instagram",
-                    icon: <FiInstagram />,
-                    url: "https://instagram.com",
-                },
+            socialSharingHeading: "Me retrouver sur",
+            socialSharing,
+        },
+        relatedProjects: {
+            title: "Autres projets",
+            projects: [
                 {
                     id: 3,
-                    name: "Facebook",
-                    icon: <FiFacebook />,
-                    url: "https://facebook.com",
+                    title: "GreenConvert",
+                    img: "/projets/greenconvert/page1.png",
                 },
                 {
                     id: 4,
-                    name: "LinkedIn",
-                    icon: <FiLinkedin />,
-                    url: "https://linkedin.com",
+                    title: "MyAnimeList",
+                    img: "/projets/myanime/page1.jpg",
                 },
                 {
                     id: 5,
-                    name: "Youtube",
-                    icon: <FiYoutube />,
-                    url: "https://youtube.com",
+                    title: "weatherPlan",
+                    img: "/projets/weatherplan/page1.png",
                 },
-            ],
-        },
-        relatedProjects: {
-            title: "Related Projects",
-            projects: [
-                { id: 2, title: "Phoenix Digital Agency", img: MobileImage2 },
-                { id: 4, title: "Cloud Storage Platform", img: UIImage2 },
-                { id: 6, title: "Apple Design System", img: WebImage1 },
             ],
         },
     },
     {
         id: 2,
-        title: "Phoenix Digital Agency",
-        category: "Application mobile",
-        img: MobileImage2,
-        publishDate: "Avril 15, 2026",
-        tags: "UI / Mobile / Design",
+        title: "Formulaire Login",
+        category: "UI Design",
+        img: "/projets/formulaire/page1.jpg",
+        publishDate: "Novembre 2023",
+        tags: "HTML / CSS / Interface",
         header: {
-            title: "Phoenix Digital Agency",
-            publishDate: "Avril 15, 2026",
-            tags: "UI / Mobile / Design",
+            title: "Formulaire Login",
+            publishDate: "Novembre 2023",
+            tags: "HTML / CSS / Interface",
         },
         gallery: [
-            { id: 1, title: "Phoenix Mobile App", img: MobileImage2 },
-            { id: 2, title: "Phoenix Dashboard", img: WebImage2 },
-            { id: 3, title: "Phoenix UI Components", img: UIImage1 },
+            {
+                id: 1,
+                title: "Interface de connexion",
+                img: "/projets/formulaire/page1.jpg",
+            },
         ],
         info: {
-            clientHeading: "About Client",
+            clientHeading: "À propos du projet",
             companyInfo: [
-                { id: 1, title: "Name", details: "Phoenix Digital" },
-                {
-                    id: 2,
-                    title: "Services",
-                    details: "Mobile App Development & Digital Solutions",
-                },
+                { id: 1, title: "Type", details: "Projet personnel" },
+                { id: 2, title: "Rôle", details: "Développeuse Frontend" },
                 {
                     id: 3,
-                    title: "Website",
-                    details: "https://phoenixdigital.com",
+                    title: "Dépôt GitHub",
+                    details:
+                        "https://github.com/Claude20022002/formulaire_HTML",
                 },
-                { id: 4, title: "Phone", details: "+33 2 34 56 78 90" },
+                { id: 4, title: "Statut", details: "Terminé" },
             ],
-            objectivesHeading: "Objective",
+            objectivesHeading: "Objectif",
             objectivesDetails:
-                "Développer une application mobile complète pour gérer les services d'une agence digitale avec un système de réservation intégré.",
+                "Conception d'une interface de connexion moderne et responsive avec validation des champs côté client, animations CSS et design épuré.",
             technologies: [
                 {
-                    title: "Tools & Technologies",
-                    techs: [
-                        "React Native",
-                        "Firebase",
-                        "Redux",
-                        "UI Kit",
-                        "Figma",
-                    ],
+                    title: "Technologies utilisées",
+                    techs: ["HTML5", "CSS3"],
                 },
             ],
-            projectDetailsHeading: "Challenge",
+            projectDetailsHeading: "Défis relevés",
             projectDetails: [
                 {
                     id: 1,
                     details:
-                        "Adapter le design pour fonctionner parfaitement sur iOS et Android avec une expérience utilisateur cohérente.",
+                        "Créer un design attrayant et entièrement responsive sans l'aide de frameworks CSS, en utilisant uniquement du CSS pur.",
                 },
                 {
                     id: 2,
                     details:
-                        "Implémenter un système de notifications en temps réel pour les réservations et mises à jour.",
+                        "Implémenter des animations et transitions fluides pour améliorer l'expérience utilisateur lors de la saisie des champs.",
                 },
             ],
-            socialSharingHeading: "Share This",
-            socialSharing: [
+            socialSharingHeading: "Me retrouver sur",
+            socialSharing,
+        },
+        relatedProjects: {
+            title: "Autres projets",
+            projects: [
                 {
                     id: 1,
-                    name: "Twitter",
-                    icon: <FiTwitter />,
-                    url: "https://twitter.com",
-                },
-                {
-                    id: 2,
-                    name: "Instagram",
-                    icon: <FiInstagram />,
-                    url: "https://instagram.com",
-                },
-                {
-                    id: 3,
-                    name: "Facebook",
-                    icon: <FiFacebook />,
-                    url: "https://facebook.com",
-                },
-                {
-                    id: 4,
-                    name: "LinkedIn",
-                    icon: <FiLinkedin />,
-                    url: "https://linkedin.com",
+                    title: "Bibliothèque en ligne",
+                    img: "/projets/bibliothèque/page1.png",
                 },
                 {
                     id: 5,
-                    name: "Youtube",
-                    icon: <FiYoutube />,
-                    url: "https://youtube.com",
+                    title: "weatherPlan",
+                    img: "/projets/weatherplan/page1.png",
                 },
-            ],
-        },
-        relatedProjects: {
-            title: "Related Projects",
-            projects: [
-                { id: 1, title: "Hestim Planner", img: WebImage2 },
-                { id: 3, title: "Project Management UI", img: UIImage1 },
-                { id: 5, title: "React Social App", img: MobileImage1 },
+                {
+                    id: 3,
+                    title: "GreenConvert",
+                    img: "/projets/greenconvert/page1.png",
+                },
             ],
         },
     },
     {
         id: 3,
-        title: "Project Management UI",
-        category: "UI/UX Design",
-        img: UIImage1,
-        publishDate: "Mars 20, 2026",
-        tags: "UI Design / UX Research",
+        title: "GreenConvert",
+        category: "Application Web",
+        img: "/projets/greenconvert/page1.png",
+        publishDate: "Janvier 2025",
+        tags: "Full-Stack / React / Node.js / MySQL / API",
         header: {
-            title: "Project Management UI",
-            publishDate: "Mars 20, 2026",
-            tags: "UI Design / UX Research",
+            title: "GreenConvert",
+            publishDate: "Janvier 2025",
+            tags: "Full-Stack / React / Node.js / MySQL / API",
         },
         gallery: [
-            { id: 1, title: "Project Management UI Design", img: UIImage1 },
-            { id: 2, title: "Dashboard Components", img: WebImage1 },
-            { id: 3, title: "Mobile UI Mockups", img: MobileImage1 },
+            {
+                id: 1,
+                title: "Page d'accueil",
+                img: "/projets/greenconvert/page1.png",
+            },
+            {
+                id: 2,
+                title: "Recherche de plantes",
+                img: "/projets/greenconvert/page2.png",
+            },
+            {
+                id: 3,
+                title: "Fiche détaillée",
+                img: "/projets/greenconvert/page3.png",
+            },
         ],
         info: {
-            clientHeading: "About Client",
+            clientHeading: "À propos du projet",
             companyInfo: [
-                { id: 1, title: "Name", details: "Design Studio Co." },
-                {
-                    id: 2,
-                    title: "Services",
-                    details: "UI/UX Design & Design Systems",
-                },
+                { id: 1, title: "Type", details: "Projet personnel" },
+                { id: 2, title: "Rôle", details: "Développeuse Full-Stack" },
                 {
                     id: 3,
-                    title: "Website",
-                    details: "https://designstudio.com",
+                    title: "Dépôt GitHub",
+                    details: "https://github.com/Claude20022002/GreenConvert",
                 },
-                { id: 4, title: "Phone", details: "+33 3 45 67 89 01" },
+                { id: 4, title: "Statut", details: "Terminé" },
             ],
-            objectivesHeading: "Objective",
+            objectivesHeading: "Objectif",
             objectivesDetails:
-                "Concevoir une interface de gestion de projets moderne et conviviale avec une excellente expérience utilisateur.",
+                "Application web dédiée aux plantes, intégrant deux APIs botaniques (Perenual et Trefle) pour fournir des informations détaillées sur les espèces végétales, leur entretien et leur identification.",
             technologies: [
                 {
-                    title: "Tools & Technologies",
+                    title: "Technologies utilisées",
                     techs: [
-                        "Figma",
-                        "Adobe XD",
-                        "Prototype.js",
-                        "Design Systems",
-                        "CSS3",
+                        "React JS",
+                        "Node.js",
+                        "MySQL",
+                        "Express",
+                        "MUI",
+                        "CSS",
+                        "PhpMyAdmin",
+                        "WampServer",
+                        "Perenual API",
+                        "Trefle API",
                     ],
                 },
             ],
-            projectDetailsHeading: "Challenge",
+            projectDetailsHeading: "Défis relevés",
             projectDetails: [
                 {
                     id: 1,
                     details:
-                        "Créer un design système cohérent qui peut être implémenté sur plusieurs plateformes.",
+                        "Orchestration de deux APIs externes avec des structures de données différentes, nécessitant une couche de normalisation robuste côté serveur.",
                 },
                 {
                     id: 2,
                     details:
-                        "Simplifier les workflows complexes des gestionnaires de projet dans une interface intuitive.",
+                        "Mise en place d'une base de données relationnelle MySQL pour persister les données utilisateurs et les plantes favorites avec des relations complexes.",
                 },
             ],
-            socialSharingHeading: "Share This",
-            socialSharing: [
+            socialSharingHeading: "Me retrouver sur",
+            socialSharing,
+        },
+        relatedProjects: {
+            title: "Autres projets",
+            projects: [
                 {
                     id: 1,
-                    name: "Twitter",
-                    icon: <FiTwitter />,
-                    url: "https://twitter.com",
-                },
-                {
-                    id: 2,
-                    name: "Instagram",
-                    icon: <FiInstagram />,
-                    url: "https://instagram.com",
-                },
-                {
-                    id: 3,
-                    name: "Facebook",
-                    icon: <FiFacebook />,
-                    url: "https://facebook.com",
+                    title: "Bibliothèque en ligne",
+                    img: "/projets/bibliothèque/page1.png",
                 },
                 {
                     id: 4,
-                    name: "LinkedIn",
-                    icon: <FiLinkedin />,
-                    url: "https://linkedin.com",
+                    title: "MyAnimeList",
+                    img: "/projets/myanime/page1.jpg",
                 },
                 {
                     id: 5,
-                    name: "Youtube",
-                    icon: <FiYoutube />,
-                    url: "https://youtube.com",
+                    title: "weatherPlan",
+                    img: "/projets/weatherplan/page1.png",
                 },
-            ],
-        },
-        relatedProjects: {
-            title: "Related Projects",
-            projects: [
-                { id: 4, title: "Cloud Storage Platform", img: UIImage2 },
-                { id: 1, title: "Hestim Planner", img: WebImage2 },
-                { id: 2, title: "Phoenix Digital Agency", img: MobileImage2 },
             ],
         },
     },
     {
         id: 4,
-        title: "Cloud Storage Platform",
-        category: "UI/UX Design",
-        img: UIImage2,
-        publishDate: "Février 25, 2026",
-        tags: "UI / UX / Cloud Services",
+        title: "MyAnimeList",
+        category: "Application Web",
+        img: "/projets/myanime/page1.jpg",
+        publishDate: "Février 2025",
+        tags: "Full-Stack / React / Node.js / MongoDB / API",
         header: {
-            title: "Cloud Storage Platform",
-            publishDate: "Février 25, 2026",
-            tags: "UI / UX / Cloud Services",
+            title: "MyAnimeList",
+            publishDate: "Février 2025",
+            tags: "Full-Stack / React / Node.js / MongoDB / API",
         },
         gallery: [
-            { id: 1, title: "Cloud Storage UI", img: UIImage2 },
-            { id: 2, title: "File Management System", img: WebImage2 },
-            { id: 3, title: "Mobile Cloud App", img: MobileImage1 },
+            {
+                id: 1,
+                title: "Catalogue d'animes",
+                img: "/projets/myanime/page1.jpg",
+            },
+            {
+                id: 2,
+                title: "Page d'un anime",
+                img: "/projets/myanime/page2.jpg",
+            },
+            {
+                id: 3,
+                title: "Ma liste personnelle",
+                img: "/projets/myanime/page3.jpg",
+            },
         ],
         info: {
-            clientHeading: "About Client",
+            clientHeading: "À propos du projet",
             companyInfo: [
-                { id: 1, title: "Name", details: "CloudTech Inc." },
+                { id: 1, title: "Type", details: "Projet personnel" },
+                { id: 2, title: "Rôle", details: "Développeuse Full-Stack" },
                 {
-                    id: 2,
-                    title: "Services",
-                    details: "Cloud Infrastructure & UI Design",
+                    id: 3,
+                    title: "Dépôt GitHub",
+                    details: "https://github.com/Claude20022002/MyAnime",
                 },
-                { id: 3, title: "Website", details: "https://cloudtech.com" },
-                { id: 4, title: "Phone", details: "+33 4 56 78 90 12" },
+                { id: 4, title: "Statut", details: "Terminé" },
             ],
-            objectivesHeading: "Objective",
+            objectivesHeading: "Objectif",
             objectivesDetails:
-                "Développer une plateforme de stockage en cloud sécurisée avec une interface utilisateur intuitive et performante.",
+                "Plateforme de suivi d'animes personnalisée permettant aux utilisateurs de gérer leur liste de visionnage, noter les séries et découvrir de nouveaux contenus grâce à l'API Jikan.",
             technologies: [
                 {
-                    title: "Tools & Technologies",
+                    title: "Technologies utilisées",
                     techs: [
-                        "React",
-                        "AWS S3",
+                        "React JS",
                         "Node.js",
-                        "PostgreSQL",
-                        "Stripe",
-                        "Figma",
+                        "MongoDB",
+                        "Express",
+                        "MUI",
+                        "CSS",
+                        "Axios",
+                        "Jikan API",
                     ],
                 },
             ],
-            projectDetailsHeading: "Challenge",
+            projectDetailsHeading: "Défis relevés",
             projectDetails: [
                 {
                     id: 1,
                     details:
-                        "Implémenter un système de sécurité robuste tout en gardant l'interface simple et accessible.",
+                        "Gestion des appels à l'API Jikan avec rate limiting et mise en cache pour respecter les quotas et garantir une navigation fluide.",
                 },
                 {
                     id: 2,
                     details:
-                        "Gérer efficacement les transferts de fichiers volumineux avec une barre de progression en temps réel.",
+                        "Conception d'un système de listes personnalisées avec état de progression (en cours, terminé, à regarder) synchronisé en temps réel avec MongoDB.",
                 },
             ],
-            socialSharingHeading: "Share This",
-            socialSharing: [
+            socialSharingHeading: "Me retrouver sur",
+            socialSharing,
+        },
+        relatedProjects: {
+            title: "Autres projets",
+            projects: [
                 {
                     id: 1,
-                    name: "Twitter",
-                    icon: <FiTwitter />,
-                    url: "https://twitter.com",
-                },
-                {
-                    id: 2,
-                    name: "Instagram",
-                    icon: <FiInstagram />,
-                    url: "https://instagram.com",
+                    title: "Bibliothèque en ligne",
+                    img: "/projets/bibliothèque/page1.png",
                 },
                 {
                     id: 3,
-                    name: "Facebook",
-                    icon: <FiFacebook />,
-                    url: "https://facebook.com",
-                },
-                {
-                    id: 4,
-                    name: "LinkedIn",
-                    icon: <FiLinkedin />,
-                    url: "https://linkedin.com",
+                    title: "GreenConvert",
+                    img: "/projets/greenconvert/page1.png",
                 },
                 {
                     id: 5,
-                    name: "Youtube",
-                    icon: <FiYoutube />,
-                    url: "https://youtube.com",
+                    title: "weatherPlan",
+                    img: "/projets/weatherplan/page1.png",
                 },
-            ],
-        },
-        relatedProjects: {
-            title: "Related Projects",
-            projects: [
-                { id: 3, title: "Project Management UI", img: UIImage1 },
-                { id: 5, title: "React Social App", img: MobileImage1 },
-                { id: 6, title: "Apple Design System", img: WebImage1 },
             ],
         },
     },
     {
         id: 5,
-        title: "React Social App",
-        category: "Application mobile",
-        img: MobileImage1,
-        publishDate: "Janvier 30, 2026",
-        tags: "React / Mobile / Social Network",
+        title: "weatherPlan",
+        category: "Application Web",
+        img: "/projets/weatherplan/page1.png",
+        publishDate: "Juin 2024",
+        tags: "Frontend / JavaScript / API / Animations",
         header: {
-            title: "React Social App",
-            publishDate: "Janvier 30, 2026",
-            tags: "React / Mobile / Social Network",
+            title: "weatherPlan",
+            publishDate: "Juin 2024",
+            tags: "Frontend / JavaScript / API / Animations",
         },
         gallery: [
-            { id: 1, title: "Social App UI", img: MobileImage1 },
-            { id: 2, title: "Feed Section", img: WebImage1 },
-            { id: 3, title: "User Profile", img: UIImage2 },
+            {
+                id: 1,
+                title: "Dashboard météo",
+                img: "/projets/weatherplan/page1.png",
+            },
         ],
         info: {
-            clientHeading: "About Client",
+            clientHeading: "À propos du projet",
             companyInfo: [
-                { id: 1, title: "Name", details: "SocialHub Networks" },
+                { id: 1, title: "Type", details: "Projet personnel" },
+                { id: 2, title: "Rôle", details: "Développeuse Frontend" },
                 {
-                    id: 2,
-                    title: "Services",
-                    details: "Social Media Platform Development",
+                    id: 3,
+                    title: "Dépôt GitHub",
+                    details: "https://github.com/Claude20022002/weatherPlan",
                 },
-                { id: 3, title: "Website", details: "https://socialhub.com" },
-                { id: 4, title: "Phone", details: "+33 5 67 89 01 23" },
+                { id: 4, title: "Statut", details: "Terminé" },
             ],
-            objectivesHeading: "Objective",
+            objectivesHeading: "Objectif",
             objectivesDetails:
-                "Créer une application sociale moderne qui permet aux utilisateurs de se connecter, partager et collaborer en temps réel.",
+                "Application météo interactive affichant les conditions actuelles et les prévisions sur plusieurs jours via l'API OpenWeatherMap, avec des animations fluides réalisées avec Framer Motion.",
             technologies: [
                 {
-                    title: "Tools & Technologies",
+                    title: "Technologies utilisées",
                     techs: [
-                        "React",
-                        "React Native",
-                        "Firebase",
-                        "Redux",
-                        "Socket.io",
-                        "Figma",
+                        "HTML5",
+                        "CSS3",
+                        "JavaScript",
+                        "OpenWeatherMap API",
+                        "Axios",
+                        "Framer Motion",
                     ],
                 },
             ],
-            projectDetailsHeading: "Challenge",
+            projectDetailsHeading: "Défis relevés",
             projectDetails: [
                 {
                     id: 1,
                     details:
-                        "Implémenter un système de notifications en très forte charge avec des milliers d'utilisateurs simultanés.",
+                        "Intégration de l'API OpenWeatherMap avec gestion des erreurs réseau et affichage conditionnel selon les conditions météorologiques.",
                 },
                 {
                     id: 2,
                     details:
-                        "Créer des mécanismes de recommandation intelligents pour améliorer l'engagement.",
+                        "Création d'animations dynamiques avec Framer Motion pour illustrer visuellement les différentes conditions météo (soleil, pluie, neige).",
                 },
             ],
-            socialSharingHeading: "Share This",
-            socialSharing: [
+            socialSharingHeading: "Me retrouver sur",
+            socialSharing,
+        },
+        relatedProjects: {
+            title: "Autres projets",
+            projects: [
                 {
                     id: 1,
-                    name: "Twitter",
-                    icon: <FiTwitter />,
-                    url: "https://twitter.com",
-                },
-                {
-                    id: 2,
-                    name: "Instagram",
-                    icon: <FiInstagram />,
-                    url: "https://instagram.com",
+                    title: "Bibliothèque en ligne",
+                    img: "/projets/bibliothèque/page1.png",
                 },
                 {
                     id: 3,
-                    name: "Facebook",
-                    icon: <FiFacebook />,
-                    url: "https://facebook.com",
+                    title: "GreenConvert",
+                    img: "/projets/greenconvert/page1.png",
                 },
                 {
                     id: 4,
-                    name: "LinkedIn",
-                    icon: <FiLinkedin />,
-                    url: "https://linkedin.com",
+                    title: "MyAnimeList",
+                    img: "/projets/myanime/page1.jpg",
                 },
-                {
-                    id: 5,
-                    name: "Youtube",
-                    icon: <FiYoutube />,
-                    url: "https://youtube.com",
-                },
-            ],
-        },
-        relatedProjects: {
-            title: "Related Projects",
-            projects: [
-                { id: 2, title: "Phoenix Digital Agency", img: MobileImage2 },
-                { id: 4, title: "Cloud Storage Platform", img: UIImage2 },
-                { id: 1, title: "Hestim Planner", img: WebImage2 },
-            ],
-        },
-    },
-    {
-        id: 6,
-        title: "Apple Design System",
-        category: "Web application",
-        img: WebImage1,
-        publishDate: "Décembre 12, 2025",
-        tags: "Design System / Web / Frontend",
-        header: {
-            title: "Apple Design System",
-            publishDate: "Décembre 12, 2025",
-            tags: "Design System / Web / Frontend",
-        },
-        gallery: [
-            { id: 1, title: "Apple Design System", img: WebImage1 },
-            { id: 2, title: "Component Library", img: WebImage2 },
-            { id: 3, title: "Design Guidelines", img: UIImage1 },
-        ],
-        info: {
-            clientHeading: "About Client",
-            companyInfo: [
-                { id: 1, title: "Name", details: "Apple Design Co." },
-                {
-                    id: 2,
-                    title: "Services",
-                    details: "Design Systems & Branding",
-                },
-                {
-                    id: 3,
-                    title: "Website",
-                    details: "https://apple-design.com",
-                },
-                { id: 4, title: "Phone", details: "+33 6 78 90 12 34" },
-            ],
-            objectivesHeading: "Objective",
-            objectivesDetails:
-                "Créer un système de design complet inspiré de la philosophie Apple pour assurer la cohérence visuelle sur tous les produits.",
-            technologies: [
-                {
-                    title: "Tools & Technologies",
-                    techs: [
-                        "Figma",
-                        "Storybook",
-                        "React Components",
-                        "CSS-in-JS",
-                        "Design Tokens",
-                    ],
-                },
-            ],
-            projectDetailsHeading: "Challenge",
-            projectDetails: [
-                {
-                    id: 1,
-                    details:
-                        "Maintenir la cohérence visuelle tout en permettant la flexibilité pour différentes applications.",
-                },
-                {
-                    id: 2,
-                    details:
-                        "Documenter le système de design de manière à ce qu'il soit facile à maintenir et à étendre.",
-                },
-            ],
-            socialSharingHeading: "Share This",
-            socialSharing: [
-                {
-                    id: 1,
-                    name: "Twitter",
-                    icon: <FiTwitter />,
-                    url: "https://twitter.com",
-                },
-                {
-                    id: 2,
-                    name: "Instagram",
-                    icon: <FiInstagram />,
-                    url: "https://instagram.com",
-                },
-                {
-                    id: 3,
-                    name: "Facebook",
-                    icon: <FiFacebook />,
-                    url: "https://facebook.com",
-                },
-                {
-                    id: 4,
-                    name: "LinkedIn",
-                    icon: <FiLinkedin />,
-                    url: "https://linkedin.com",
-                },
-                {
-                    id: 5,
-                    name: "Youtube",
-                    icon: <FiYoutube />,
-                    url: "https://youtube.com",
-                },
-            ],
-        },
-        relatedProjects: {
-            title: "Related Projects",
-            projects: [
-                { id: 1, title: "Hestim Planner", img: WebImage2 },
-                { id: 3, title: "Project Management UI", img: UIImage1 },
-                { id: 4, title: "Cloud Storage Platform", img: UIImage2 },
             ],
         },
     },

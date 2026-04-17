@@ -1,9 +1,6 @@
 import {
     FiGithub,
-    FiTwitter,
     FiLinkedin,
-    FiGlobe,
-    FiYoutube,
     FiFacebook,
     FiInstagram,
 } from "react-icons/fi";
@@ -13,36 +10,33 @@ const socialLinks = [
     {
         id: 1,
         icon: <FiInstagram />,
+        label: "Instagram",
         url: "https://www.instagram.com/claudia.lusamote?igsh=bTh2ZzE0Ymppazcz",
     },
     {
         id: 2,
         icon: <FiGithub />,
+        label: "GitHub",
         url: "https://github.com/Claude20022002",
     },
     {
         id: 3,
         icon: <FiFacebook />,
+        label: "Facebook",
         url: "https://www.facebook.com/share/1LAWsnW3oS/?mibextid=wwXIfr",
     },
     {
         id: 4,
         icon: <FiLinkedin />,
+        label: "LinkedIn",
         url: "https://www.linkedin.com/in/claudia-lusamote-kimfuta-271b512a8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     },
-    /*
-    {
-        id: 5,
-        icon: <FiYoutube />,
-        url: "https://www.youtube.com/c/realstoman",
-    },
-	*/
 ];
 
 const AppFooter = () => {
     return (
         <div className="container mx-auto">
-            <div className="pt-20 sm:pt-30 pb-8 mt-20 border-t-2 border-primary-light dark:border-secondary-dark">
+            <div className="pt-20 sm:pt-32 pb-8 mt-20 border-t-2 border-primary-light dark:border-secondary-dark">
                 {/* Footer social links */}
                 <div className="font-general-regular flex flex-col justify-center items-center mb-12 sm:mb-28">
                     <p className="text-3xl sm:text-4xl text-primary-dark dark:text-primary-light mb-5">
@@ -52,8 +46,10 @@ const AppFooter = () => {
                         {socialLinks.map((link) => (
                             <a
                                 href={link.url}
-                                target="__blank"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 key={link.id}
+                                aria-label={link.label}
                                 className="text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-300"
                             >
                                 <i className="text-xl sm:text-2xl md:text-3xl">

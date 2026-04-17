@@ -1,10 +1,5 @@
 import useThemeSwitcher from "../../hooks/useThemeSwitcher";
-import { FiArrowDownCircle, FiDownload, FiGlobe } from "react-icons/fi";
-/*
-import developerLight from "../../images/developer.svg";
-import developerDark from "../../images/developer-dark.svg";
-*/
-
+import { FiArrowDownCircle } from "react-icons/fi";
 import { motion } from "framer-motion";
 
 const AppBanner = () => {
@@ -41,7 +36,7 @@ const AppBanner = () => {
                     }}
                     className="font-general-medium mt-4 text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200"
                 >
-                    Dévellopeur Junior & Passionné par la Tech
+                    Développeuse Junior & Passionnée par la Tech
                 </motion.h5>
                 <motion.p
                     initial={{ opacity: 0 }}
@@ -71,12 +66,12 @@ const AppBanner = () => {
                     <a
                         download="LUSAMOTE-KIMFUTA-Claudia.pdf"
                         href="/others/Curriculum-Vitae.pdf"
-                        className="font-general-medium flex justify-center items-center w-67 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
-                        aria-label="Download Resume"
+                        className="font-general-medium flex justify-center items-center w-64 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
+                        aria-label="Télécharger le CV"
                     >
-                        <FiArrowDownCircle className="mr-2 sm:mr-3 h-5 w-7 sn:w-6 sm:h-6 duration-100"></FiArrowDownCircle>
+                        <FiArrowDownCircle className="mr-2 sm:mr-3 h-5 w-6 sm:h-6 duration-100" />
                         <span className="text-sm sm:text-lg font-general-medium duration-100">
-                            Télécharger Cv
+                            Télécharger le CV
                         </span>
                     </a>
                 </motion.div>
@@ -87,7 +82,7 @@ const AppBanner = () => {
                 transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
                 className="w-full sm:w-2/3 text-right float-right mt-8 sm:mt-0 flex justify-center items-center"
             >
-                <img src={avatarSrc} alt="Developer" width={"380px"} />
+                <img src={avatarSrc} alt="Illustration développeuse" width={"380px"} />
             </motion.div>
         </motion.section>
     );

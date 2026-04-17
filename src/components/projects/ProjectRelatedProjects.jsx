@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import SingleProjectContext from "../../context/SingleProjectContext";
 
 const ProjectRelatedProjects = () => {
@@ -19,16 +20,15 @@ const ProjectRelatedProjects = () => {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-10">
-                {singleProjectData.RelatedProject.projects.map((project) => {
-                    return (
+                {singleProjectData.RelatedProject.projects.map((project) => (
+                    <Link to={`/projects/${project.id}`} key={project.id}>
                         <img
                             src={project.img}
-                            className="rounded-xl cursor-pointer"
+                            className="rounded-xl cursor-pointer hover:opacity-80 transition-opacity duration-300"
                             alt={project.title}
-                            key={project.id}
                         />
-                    );
-                })}
+                    </Link>
+                ))}
             </div>
         </div>
     );

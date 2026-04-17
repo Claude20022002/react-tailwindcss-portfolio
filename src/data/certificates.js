@@ -537,7 +537,7 @@ export const certificatesData = [
                 {
                     id: 4,
                     title: "Voir la certification",
-                    details: "https://coursera.orgverify/VBS44JTKDXP8",
+                    details: "https://coursera.org/verify/VBS44JTKDXP8",
                 },
             ],
             skillsHeading: "Compétences obtenues",

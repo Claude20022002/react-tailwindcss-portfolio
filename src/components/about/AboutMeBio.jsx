@@ -1,4 +1,3 @@
-import profileImage from "../../images/profile.jpeg";
 import { useContext } from "react";
 import AboutMeContext from "../../context/AboutMeContext";
 
@@ -11,7 +10,7 @@ const AboutMeBio = () => {
                 <img
                     src="/images/profile-square-11.webp"
                     className="rounded-lg w-96"
-                    alt=""
+                    alt="Photo de profil de Claudia Lusamote Kimfuta"
                 />
             </div>
 

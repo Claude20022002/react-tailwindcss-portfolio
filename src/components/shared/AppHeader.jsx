@@ -14,23 +14,16 @@ const AppHeader = () => {
     const [activeTheme, setTheme] = useThemeSwitcher();
 
     function toggleMenu() {
-        if (!showMenu) {
-            setShowMenu(true);
-        } else {
-            setShowMenu(false);
-        }
+        setShowMenu((prev) => !prev);
     }
 
     function showHireMeModal() {
+        const html = document.getElementsByTagName("html")[0];
         if (!showModal) {
-            document
-                .getElementsByTagName("html")[0]
-                .classList.add("overflow-y-hidden");
+            html.classList.add("overflow-y-hidden");
             setShowModal(true);
         } else {
-            document
-                .getElementsByTagName("html")[0]
-                .classList.remove("overflow-y-hidden");
+            html.classList.remove("overflow-y-hidden");
             setShowModal(false);
         }
     }
@@ -51,13 +44,13 @@ const AppHeader = () => {
                                 <img
                                     src={logoDark}
                                     className="w-36"
-                                    alt="Dark Logo"
+                                    alt="LK Code — logo clair"
                                 />
                             ) : (
                                 <img
                                     src={logoLight}
                                     className="w-36"
-                                    alt="Dark Logo"
+                                    alt="LK Code — logo sombre"
                                 />
                             )}
                         </Link>
@@ -66,7 +59,7 @@ const AppHeader = () => {
                     {/* Theme switcher small screen */}
                     <div
                         onClick={() => setTheme(activeTheme)}
-                        aria-label="Theme Switcher"
+                        aria-label="Changer de thème"
                         className="block sm:hidden ml-0 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
                     >
                         {activeTheme === "dark" ? (
@@ -82,7 +75,7 @@ const AppHeader = () => {
                             onClick={toggleMenu}
                             type="button"
                             className="focus:outline-none"
-                            aria-label="Hamburger Menu"
+                            aria-label="Menu de navigation"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -110,21 +103,21 @@ const AppHeader = () => {
                     <Link
                         to="/projects"
                         className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-                        aria-label="Projects"
+                        aria-label="Projets"
                     >
                         Projets
                     </Link>
                     <Link
                         to="/about"
                         className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
-                        aria-label="About Me"
+                        aria-label="À propos de moi"
                     >
                         À propos de moi
                     </Link>
                     <Link
                         to="/certificates"
                         className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-                        aria-label="Certificates"
+                        aria-label="Certificats"
                     >
                         Certificats
                     </Link>
@@ -136,13 +129,14 @@ const AppHeader = () => {
                         Contact
                     </Link>
                     <div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
-                        <span
+                        <button
                             onClick={showHireMeModal}
+                            type="button"
                             className="font-general-medium sm:hidden block text-left text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-sm px-4 py-2 mt-2 duration-300 w-24"
-                            aria-label="Hire Me Button"
+                            aria-label="Engagez-moi"
                         >
                             <Button title="Engagez-moi" />
-                        </span>
+                        </button>
                     </div>
                 </div>
 
@@ -151,21 +145,21 @@ const AppHeader = () => {
                     <Link
                         to="/projects"
                         className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-                        aria-label="Projects"
+                        aria-label="Projets"
                     >
                         Projets
                     </Link>
                     <Link
                         to="/about"
                         className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-                        aria-label="About Me"
+                        aria-label="À propos de moi"
                     >
                         À propos de moi
                     </Link>
                     <Link
                         to="/certificates"
                         className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-                        aria-label="Certificates"
+                        aria-label="Certificats"
                     >
                         Certificats
                     </Link>
@@ -181,19 +175,20 @@ const AppHeader = () => {
                 {/* Header right section buttons */}
                 <div className="hidden sm:flex justify-between items-center flex-col md:flex-row">
                     <div className="hidden md:flex">
-                        <span
+                        <button
                             onClick={showHireMeModal}
+                            type="button"
                             className="text-md font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5 duration-300"
-                            aria-label="Hire Me Button"
+                            aria-label="Engagez-moi"
                         >
                             <Button title="Engagez-moi" />
-                        </span>
+                        </button>
                     </div>
 
                     {/* Theme switcher large screen */}
                     <div
                         onClick={() => setTheme(activeTheme)}
-                        aria-label="Theme Switcher"
+                        aria-label="Changer de thème"
                         className="ml-8 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
                     >
                         {activeTheme === "dark" ? (
@@ -204,16 +199,14 @@ const AppHeader = () => {
                     </div>
                 </div>
             </div>
+
             {/* Hire me modal */}
-            <div>
-                {showModal ? (
-                    <HireMeModal
-                        onClose={showHireMeModal}
-                        onRequest={showHireMeModal}
-                    />
-                ) : null}
-                {showModal ? showHireMeModal : null}
-            </div>
+            {showModal && (
+                <HireMeModal
+                    onClose={showHireMeModal}
+                    onRequest={showHireMeModal}
+                />
+            )}
         </motion.nav>
     );
 };
